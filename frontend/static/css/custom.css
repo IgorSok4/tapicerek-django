@@ -10,3 +10,7 @@
     color: rgb(114,74,2);
     margin-right: 20px;
 }
+
+.custom-container {
+    max-width: 85%!important;
+}
