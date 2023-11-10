@@ -41,6 +41,12 @@ footer {
     margin-bottom: .5em;
   }
 
+  .footer-hours {
+    color: #888!important;
+    margin-bottom: .5em;
+    display: block;
+  }
+
 
   @media (max-width: 768px) {
     .footer-heading {
