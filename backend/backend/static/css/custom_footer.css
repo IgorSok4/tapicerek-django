@@ -1,0 +1,55 @@
+footer {
+    background-color: #000; /* Czarny tło footera */
+    color: #fff; /* Biały tekst */
+    font-family: 'Arial', sans-serif; /* Przykładowa czcionka */
+    padding: 20px 0; /* Dodanie odstępów wewnętrznych */
+  }
+
+  .footer-heading {
+    font-size: 1.5em; /* Większy rozmiar czcionki dla nagłówków */
+    font-weight: bold; /* Pogrubienie nagłówków */
+    margin-bottom: .5em; /* Odstęp pod nagłówkiem */
+  }
+
+  .footer-divider {
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+    margin-bottom: 3em;
+  }
+
+  .footer-column {
+    margin-bottom: 1em;
+  }
+
+  .footer-link {
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: .5em;
+    display: block;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid #444;
+  }
+
+  .footer-link:hover {
+    text-decoration: underline;
+  }
+
+  .footer-text {
+    margin-bottom: .5em;
+  }
+
+  .footer-hours {
+    color: #888!important;
+    margin-bottom: .5em;
+    display: block;
+  }
+
+
+  @media (max-width: 768px) {
+    .footer-heading {
+      font-size: 1.2em;
+    }
+  }

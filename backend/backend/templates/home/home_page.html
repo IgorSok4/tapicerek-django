@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% block content %}
+    <div class="container-fluid d-flex flex-column align-items-center py-4 py-xl-5 custom-container" style="margin-top: 110px;">
+        <div class="row gy-4">
+            <div class="col-12 col-md-12">
+                <div class="card">
+                    {% if page.main_image %}
+                        {% image page.main_image max-1920x1080 as img %}
+                        <img class="card-img img-fluid" src="{{ img.url }}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <div class="card">
+                    {% if page.main_image_1 %}
+                        {% image page.main_image_1 fill-1280x720 as img %}
+                        <img class="card-img img-fluid" src="{{ img.url }}">
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-md-6 d-none d-md-block">
+                <div class="card">
+                    {% if page.main_image_2 %}
+                        {% image page.main_image_2 fill-1280x720 as img %}
+                        <img class="card-img img-fluid" src="{{ img.url }}">
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex flex-column align-items-center py-4 py-xl-5" style="margin-top: 55px;">
+        <div class="row gy-4 row-cols-1 row-cols-md-2 w-100" style="max-width: 800px;">
+            <div class="col order-md-first">
+                <div class="card">
+                    {% if page.main_project_1 %}
+                        {% image page.main_project_1 fill-1280x1280 as img %}
+                        <img class="card-img w-100 d-block blur-image" id="prace-img-1" src="{{ img.url }}" style="max-width: 380px;max-height: 280px;object-fit: cover;">
+                    {% endif %}
+                    <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4 hover-text">
+                        <h4 style="font-family: 'Albert Sans', sans-serif;font-weight: bold;color: var(--bs-body-bg);">{{ self.title_project_1 }}</h4>
+                        <p style="font-family: 'Albert Sans', sans-serif;font-weight: bold;color: var(--bs-body-bg);">{{ self.description_project_1 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-md-flex order-first justify-content-md-start align-items-md-end order-md-1">
+                <div style="width: 80%;">
+                    <h2 style="font-family: 'Albert Sans', sans-serif;color: rgb(114,74,2);"><strong>Nasze najnowsze prace</strong></h2>
+                    {% comment %} <p class="w-lg-50" style="color: rgb(114,74,2);font-weight: bold;">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p> {% endcomment %}
+                </div>
+            </div>
+            <div class="col order-md-2">
+                <div class="card">
+                    {% if page.main_project_2 %}
+                        {% image page.main_project_2 fill-1280x1280 as img %}
+                        <img class="card-img w-100 d-block blur-image" id="prace-img-1" src="{{ img.url }}" style="max-width: 380px;max-height: 280px;object-fit: cover;">
+                    {% endif %}
+                    <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4 hover-text">
+                        <h4 style="color: var(--bs-body-bg);font-family: 'Albert Sans', sans-serif;font-weight: bold;">{{ self.title_project_2 }}</h4>
+                        <p style="color: var(--bs-body-bg);font-family: 'Albert Sans', sans-serif;font-weight: bold;">{{ self.description_project_2 }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col order-md-2">
+                <div class="card">
+                    {% if page.main_project_3 %}
+                        {% image page.main_project_3 fill-1280x1280 as img %}
+                        <img class="card-img w-100 d-block blur-image" id="prace-img-1" src="{{ img.url }}" style="max-width: 380px;max-height: 280px;object-fit: cover;">
+                    {% endif %}
+                    <div class="card-img-overlay text-center d-flex flex-column justify-content-center align-items-center p-4 hover-text">
+                        <h4 style="color: var(--bs-body-bg);font-family: 'Albert Sans', sans-serif;font-weight: bold;">{{ self.title_project_3 }}</h4>
+                        <p style="font-family: 'Albert Sans', sans-serif;font-weight: bold;color: var(--bs-body-bg);">{{ self.description_project_3 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container d-flex flex-column align-items-center py-4 py-xl-5" style="margin-top: 55px;">
+        <div class="row w-100">
+            <div class="custom-section col-12">
+                <h2 style="font-family: 'Albert Sans', sans-serif; position: relative; padding-left: 20px;">
+                    <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 60%; background-color: rgb(114,74,2);"></span>
+                    <strong style="color: rgb(114,74,2);">{{ self.title_1 }}</strong>
+                </h2>
+                <p>{{ self.body_1|safe }}</p>
+            </div>
+            <div class="custom-section col-12">
+                <h2 style="font-family: 'Albert Sans', sans-serif; position: relative; padding-left: 20px;">
+                    <span style="position: absolute; left: 0; top: 50%; transform: translateY(-50%); width: 4px; height: 60%; background-color: rgb(114,74,2);"></span>
+                    <strong style="color: rgb(114,74,2);">{{ self.title_2 }}</strong>
+                </h2>
+                <p>{{ self.body_2|safe }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="custom-section col-12 text-center mb-5 mt-5">
+        <p style="font-size: 1.5rem; font-family: 'Albert Sans', sans-serif;font-weight: bold;color: rgb(114,74,2);">Masz dodatkowe pytania oraz zainteresowała Cię nasza oferta?</p>
+        <a href="/kontakt/" class="btn btn-cont-main">Skontaktuj się z nami →</a>
+    </div>
+{% endblock content %}
+{% block extra_js %}
+        <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/numers_count.js' %}"></script>
+{% endblock extra_js %}
