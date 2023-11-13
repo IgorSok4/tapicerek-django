@@ -1,3 +1,4 @@
+/* Nav buttons on home page */
 .nav-item .nav-link:hover {
     background-color: rgb(114,74,2);
     border-radius: 5px;
@@ -12,8 +13,48 @@
 }
 
 .custom-container {
-    max-width: 85%!important;
+    max-width: 95%!important;
 }
+
+#nav-sec {
+    z-index: 1020; /* Upewnij się, że z-index jest odpowiednio wysoki */
+    transition: top 0.1s; /* opcjonalnie, dla płynnego przejścia */
+}
+
+/* logo nav-sec */
+#navbar-logo {
+    display: none;
+    position: absolute;
+    left: 50px;
+    top: 0;
+    height: 100%;
+}
+
+.logo-container {
+    max-width: 150px; /* Maksymalna szerokość logo */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-container img {
+    max-height: 100%;
+    width: auto; /* Zachowuje proporcje obrazu */
+}
+
+
+/* Styl dla paska nawigacji, gdy jest 'przyklejony' na górze */
+.sticky {
+    position: fixed;
+    top: 0; /* Bez przesunięcia, przyczepia się bezpośrednio do góry */
+    width: 100%; /* upewnij się, że pasek nawigacji rozciąga się na całą szerokość */
+    z-index: 1020; /* Wysoki z-index, aby być na wierzchu innych elementów */
+    border-top: 3px solid rgb(114,74,2); /* Brązowe obramowanie górne */
+    border-bottom: 3px solid rgb(114,74,2); /* Brązowe obramowanie dolne */
+}
+
+/* Contact button on the home page */
 
 .btn-cont-main {
     color: white;
@@ -31,4 +72,25 @@
     font-weight: bold!important;
     background-color: rgb(70, 46, 2);
     transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+}
+
+/* Go up button */
+#scrollTopBtn {
+    padding: 10px;
+    background-color: rgb(70, 46, 2);
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+#scrollTopBtn:hover {
+    opacity: 1;
+}
+
+.feather {
+    fill: white;
+    stroke: white;
 }

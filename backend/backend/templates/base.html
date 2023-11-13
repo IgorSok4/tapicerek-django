@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-light custom-border" style="height: 126px;position: relative;">
+    <nav class="navbar navbar-expand-md navbar-light custom-border" style="height: 74px;position: relative;margin-bottom: 100px;">
         <div class="container-fluid">
             <div>
                 <a class="navbar-brand navbar-brand-centered" href="#">
@@ -46,10 +46,22 @@
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-expand-md bg-body py-3" id="nav-sec">
-        <div class="container"><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse navbar-self" id="navcol-2" style="text-align: center;align-items: center;font-size: 26px;font-family: 'Albert Sans', sans-serif;font-weight: bold;color: rgb(114,74,2);">
-                <ul class="navbar-nav mx-auto" style="width: 1226px;">
+    <nav class="navbar navbar-expand-md bg-body pb-3" id="nav-sec">
+      <a class="navbar-brand" href="#" id="navbar-logo" style="display: none;">
+          <div class="logo-container">
+              {% if page.logo_image_2 %}
+                  {% image page.logo_image_2 fill-500x150 as img %}
+                  <img src="{{ img.url }}" alt="Logo" style="height: 100%; width: auto;">
+              {% endif %}
+          </div>
+      </a>
+        <div class="container">
+            <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2">
+              <span class="visually-hidden">Toggle navigation</span>
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar-self" id="navcol-2" style="text-align: center; align-items: center; font-size: 26px; font-family: 'Albert Sans', sans-serif; font-weight: bold; color: rgb(114,74,2);">
+                <ul class="navbar-nav mx-auto">
                     <li class="nav-item"></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(114,74,2);">Usługi</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);font-family: 'Albert Sans', sans-serif;">Tkaniny</a></li>
@@ -113,8 +125,8 @@
         </div>
       </footer>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/numers_count.js' %}"></script>
-
+    <script src="{% static 'js/sticky_nav.js' %}"></script>
+    <script src="{% static 'js/button_up.js' %}"></script>
     {% block extra_js %}
     {% endblock extra_js %}
 
