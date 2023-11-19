@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     window.onscroll = function() { stickyNav(); };
 
     var navbar = document.getElementById("nav-sec");
-    var mainContent = document.querySelector('main'); // Upewnij się, że ten selektor odpowiada elementowi na stronie.
+    var mainContent = document.querySelector('main');
     var sticky = navbar ? navbar.offsetTop : 0;
 
     function stickyNav() {

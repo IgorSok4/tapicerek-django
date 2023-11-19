@@ -13,6 +13,9 @@
     <link rel="stylesheet" href="{% static 'css/Navbar-Right-Links-icons.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom_footer.css' %}">
+    {% block extra_link %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
+    {% endblock extra_link %}
 </head>
 
 <body>
@@ -20,8 +23,8 @@
         <div class="container-fluid">
             <div>
                 <a class="navbar-brand navbar-brand-centered" href="#">
-                {% if page.logo_image %}
-                    {% image page.logo_image fill-240x240 as img %}
+                {% if logo_image %}
+                    {% image logo_image fill-240x240 as img %}
                     <img class="img-fluid" id="logo" src="{{ img.url }}" width="240px">
                 {% endif %}
                 </a>
@@ -49,8 +52,8 @@
     <nav class="navbar navbar-expand-md bg-body pb-3" id="nav-sec">
       <a class="navbar-brand" href="#" id="navbar-logo" style="display: none;">
           <div class="logo-container">
-              {% if page.logo_image_2 %}
-                  {% image page.logo_image_2 fill-500x150 as img %}
+              {% if logo_image_2 %}
+                  {% image logo_image_2 fill-500x150 as img %}
                   <img src="{{ img.url }}" alt="Logo" style="height: 100%; width: auto;">
               {% endif %}
           </div>
@@ -63,8 +66,8 @@
             <div class="collapse navbar-collapse navbar-self" id="navcol-2" style="text-align: center; align-items: center; font-size: 26px; font-family: 'Albert Sans', sans-serif; font-weight: bold; color: rgb(114,74,2);">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item"></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(114,74,2);">Usługi</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);font-family: 'Albert Sans', sans-serif;">Tkaniny</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Usługi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Tkaniny</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Doświadczenie</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Artykuły</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Galeria</a></li>
@@ -98,24 +101,24 @@
               <h5 class="footer-heading">Godziny Otwarcia</h5>
               <hr class="footer-divider">
               <ul class="list-unstyled footer-hours">
-                <li class="footer-hours">Poniedziałek: {{ self.open_mon }}</li>
-                <li class="footer-hours">Wtorek: {{ self.open_tue }}</li>
-                <li class="footer-hours">Środa: {{ self.open_wed }}</li>
-                <li class="footer-hours">Czwartek: {{ self.open_thu }}</li>
-                <li class="footer-hours">Piątek: {{ self.open_fri }}</li>
-                <li class="footer-hours">Sobota: {{ self.open_sat }}</li>
-                <li class="footer-hours">Niedziela: {{ self.open_sun }}</li>
+                <li class="footer-hours">Poniedziałek: {{ open_mon }}</li>
+                <li class="footer-hours">Wtorek: {{ open_tue }}</li>
+                <li class="footer-hours">Środa: {{ open_wed }}</li>
+                <li class="footer-hours">Czwartek: {{ open_thu }}</li>
+                <li class="footer-hours">Piątek: {{ open_fri }}</li>
+                <li class="footer-hours">Sobota: {{ open_sat }}</li>
+                <li class="footer-hours">Niedziela: {{ open_sun }}</li>
               </ul>
             </div>
             <div class="col-md-3" style="margin-right: 30px;">
               <h5 class="footer-heading">Kontakt</h5>
               <hr class="footer-divider">
               <ul class="list-unstyled footer-text">
-                <li style="color: #888;">{{ self.street }}</li>
-                <li style="color: #888;margin-bottom: 1em;">{{ self.zip_city }}</li>
-                <li>{{ self.tel_home }}</li>
-                <li>{{ self.tek_mobi }}</li>
-                <li>{{ self.email }}</li>
+                <li style="color: #888;">{{ street }}</li>
+                <li style="color: #888;margin-bottom: 1em;">{{ zip_city }}</li>
+                <li>{{ tel_home }}</li>
+                <li>{{ tek_mobi }}</li>
+                <li>{{ email }}</li>
               </ul>
             </div>
           </div>
@@ -125,7 +128,6 @@
         </div>
       </footer>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/sticky_nav.js' %}"></script>
     <script src="{% static 'js/button_up.js' %}"></script>
     {% block extra_js %}
     {% endblock extra_js %}

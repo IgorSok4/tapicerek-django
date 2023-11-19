@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load wagtailimages_tags %}
+{% block title %}Tapicerek{% endblock title %}
 {% block content %}
     <div class="container-fluid d-flex flex-column align-items-center py-4 py-xl-3 custom-container" style="margin-top: auto;">
         <div class="row gy-4">
@@ -109,5 +110,4 @@
         <script src="{% static 'js/button_up.js' %}"></script>
         <script src="{% static 'js/sticky_nav.js' %}"></script>
         <script src="{% static 'js/logo_2_visible_nav.js' %}"></script>
-
 {% endblock extra_js %}

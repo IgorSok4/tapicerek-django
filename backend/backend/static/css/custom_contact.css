@@ -1,0 +1,41 @@
+/* Styl dla niestandardowego checkboxa */
+.custom-checkbox {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Styl dla zaznaczonego checkboxa */
+.custom-checkbox input[type="checkbox"]:checked + .custom-checkbox-label::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 8px;
+    height: 16px;
+    border: solid rgb(114,74,2);
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+/* Ukrywanie oryginalnego checkboxa */
+.custom-checkbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Etykieta dla niestandardowego checkboxa */
+.custom-checkbox-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
