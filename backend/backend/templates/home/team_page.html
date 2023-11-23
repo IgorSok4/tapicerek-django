@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+{% block titlw %}Nasz Zespół{% endblock titlw %}
+{% block content %}
+    <div>
+      <div class="container-fluid">
+        <div class="row">
+          {% for member in page.team_members.all %}
+          <div class="col-md-6" style="text-align: center">
+            {% if member.member_image %}
+            {% image member.member_image fill-300x300 as img %}
+            <img class="teamprofilepictures" src="{{ img.url }}" alt="{{ member.member_name_surname }}">
+            {% endif %}
+            <h1 class="teamprofilenames">{{ member.member_name_surname }}</h1>
+            <h1 class="teamprofileprofessions">{{ member.member_role }}</h1>
+            <p class="teamprofiledescription">
+              {{ member.member_description }}
+            </p>
+            <i class="fab fa-linkedin-in teamprofileicons"></i>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+{% endblock content %}

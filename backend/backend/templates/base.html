@@ -1,5 +1,6 @@
 {% load static %}
 {% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
 
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="{% static 'css/Navbar-Right-Links-icons.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom_footer.css' %}">
+    <link rel="stylesheet" href="{% static 'css/Team-Presentation---2-Persons---Social-Media-Icon.css'%}">
     {% block extra_link %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.css" />
     {% endblock extra_link %}
@@ -71,8 +73,8 @@
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Doświadczenie</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Artykuły</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Galeria</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Zespół</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">Kontakt</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% pageurl team_page %}" style="text-align: center;color: rgb(114,74,2);">Zespół</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% pageurl contact_page %}" style="text-align: center;color: rgb(114,74,2);">Kontakt</a></li>
                     <li class="nav-item"><a class="nav-link" href="#" style="text-align: center;color: rgb(114,74,2);">O firmie</a></li>
                 </ul>
             </div>
@@ -129,6 +131,8 @@
       </footer>
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
     <script src="{% static 'js/button_up.js' %}"></script>
+    <script src="{% static 'js/sticky_nav.js' %}"></script>
+    <script src="{% static 'js/logo_2_visible_nav.js' %}"></script>
     {% block extra_js %}
     {% endblock extra_js %}
 
