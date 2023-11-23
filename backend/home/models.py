@@ -153,3 +153,50 @@ class HomePage(Page):
             FieldPanel('email'),
         ], heading="Kontakt"),
     ]
+
+
+# Models for Team Page ~ Zakładka zespół
+class TeamMember(Orderable):
+    page = ParentalKey('TeamPage', related_name='team_members')
+    member_image = models.ForeignKey(
+        'wagtailimages.Image',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        related_name='+'
+    )
+    member_name_surname = models.CharField(max_length=81, null=True)
+    member_role = models.CharField(max_length=40, null=True)
+    member_description = models.CharField(max_length=255, null=True)
+
+    # socials
+    member_socials_fb = models.CharField(max_length=155, null=True,
+                                         blank=True)
+    member_socials_x = models.CharField(max_length=155, null=True,
+                                        blank=True)
+    member_socials_instagram = models.CharField(max_length=155, null=True,
+                                                blank=True)
+    member_socials_linkedin = models.CharField(max_length=155, null=True,
+                                               blank=True)
+    member_socials_yt = models.CharField(max_length=155, null=True,
+                                         blank=True)
+
+    panels = [
+        FieldPanel('member_image'),
+        FieldPanel('member_name_surname'),
+        FieldPanel('member_role'),
+        FieldPanel('member_description'),
+        MultiFieldPanel([
+            FieldPanel('member_socials_fb'),
+            FieldPanel('member_socials_x'),
+            FieldPanel('member_socials_instagram'),
+            FieldPanel('member_socials_linkedin'),
+            FieldPanel('member_socials_yt'),
+        ], heading="Social Media Links")
+    ]
+
+
+class TeamPage(Page):
+    content_panels = Page.content_panels + [
+    InlinePanel('team_members', label="Team Members"),
+    ]

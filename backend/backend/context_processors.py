@@ -1,4 +1,5 @@
-from home.models import HomePage
+from home.models import HomePage, TeamPage
+from contact.models import ContactPage
 
 def global_homepage_data(request):
     home_page = HomePage.objects.first()
@@ -22,3 +23,9 @@ def global_homepage_data(request):
             'open_sun': home_page.open_sun,
         }
     return {}
+
+def global_page_links(request):
+    return {
+        'contact_page': ContactPage.objects.live().first(),
+        'team_page': TeamPage.objects.live().first(),
+    }

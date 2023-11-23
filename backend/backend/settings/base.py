@@ -76,6 +76,7 @@ TEMPLATES = [
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
                 "backend.context_processors.global_homepage_data",
+                "backend.context_processors.global_page_links",
             ],
         },
     },
@@ -167,3 +168,6 @@ WAGTAILSEARCH_BACKENDS = {
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 WAGTAILADMIN_BASE_URL = "http://example.com"
+
+# Django 3.2+ warning regarding AutoField. The newest Django version uses BigAutoField key.
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
