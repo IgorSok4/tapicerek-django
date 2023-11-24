@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load wagtailimages_tags %}
+{% block title %}Usługi Tapicerskie{% endblock title %}
+{% block content %}
+<div>
+    <div class="container d-flex flex-column py-4 py-xl-5">
+    {% for block in page.services_body %}
+        {% if block.block_type == 'heading' %}
+            <h2 class="stream-heading stream-link">{{ block.value }}</h2>
+        {% elif block.block_type == 'subheading' %}
+            <div class="stream-subheading stream-link">{{ block.value }}</div>
+        {% elif block.block_type == 'paragraph_style_1' %}
+            <div class="stream-paragraph-style-1 stream-link">{{ block.value }}</div>
+        {% elif block.block_type == 'paragraph_style_2' %}
+            <div class="stream-paragraph-style-2 stream-link">{{ block.value }}</div>
+        {% elif block.block_type == 'paragraph_style_3' %}
+            <div class="stream-paragraph-style-3 stream-link">{{ block.value }}</div>
+        {% elif block.block_type == 'paragraph' %}
+            <div class="stream-link">{{ block.value }}</div>
+        {% elif block.block_type == 'image' %}
+            {% image block.value original class="stream-image" %}
+        {% elif block.block_type == 'image_small' %}
+            {% image block.value original class="stream-image-small" %}
+        {% elif block.block_type == 'alert' %}
+            <h4 class="stream-alert stream-link">{{ block.value }}</h4>
+        {% endif %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock content%}

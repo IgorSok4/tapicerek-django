@@ -94,3 +94,78 @@
     fill: white;
     stroke: white;
 }
+
+
+/* Services css */
+.stream-image {
+    max-width: 50%;
+    height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stream-image-small {
+    max-width: 20%;
+    height: 20%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stream-heading {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: rgb(114,74,2);
+}
+
+.stream-subheading {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: rgb(114,74,2);
+    font-size: 28px;
+}
+
+.stream-alert {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    color: red;
+}
+
+.stream-paragraph-style-1{
+    font-size: 20px;
+    color: rgb(114,74,2);
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.stream-paragraph-style-2{
+    color: rgb(62, 62, 62);
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+}
+
+.stream-paragraph-style-3{
+    font-size: 24px;
+    color: rgb(114,74,2);
+}
+
+.stream-link a {
+    font-weight: 400;
+    color: rgb(110, 72, 1);
+    text-decoration: none;
+    transition: .5s;
+}
+
+.stream-link a:hover {
+    font-weight: 500;
+    color: rgb(161, 106, 4);
+}
+
