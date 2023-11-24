@@ -1,4 +1,8 @@
-from home.models import HomePage, TeamPage
+from home.models import (
+    HomePage,
+    TeamPage,
+    ServicesPage,
+)
 from contact.models import ContactPage
 
 def global_homepage_data(request):
@@ -28,4 +32,5 @@ def global_page_links(request):
     return {
         'contact_page': ContactPage.objects.live().first(),
         'team_page': TeamPage.objects.live().first(),
+        'service_page': ServicesPage.objects.live().first(),
     }

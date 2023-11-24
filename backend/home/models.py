@@ -2,10 +2,15 @@ from django.db import models
 
 from modelcluster.fields import ParentalKey
 
+from wagtail import blocks
 from wagtail.models import Page, Orderable
-from wagtail.fields import RichTextField
-from wagtail.admin.panels import FieldPanel, MultiFieldPanel, InlinePanel
-from wagtail.search import index
+from wagtail.fields import RichTextField, StreamField
+from wagtail.images.blocks import ImageChooserBlock
+from wagtail.admin.panels import (
+    FieldPanel,
+    MultiFieldPanel,
+    InlinePanel
+)
 
 
 class HomePage(Page):
@@ -199,4 +204,35 @@ class TeamMember(Orderable):
 class TeamPage(Page):
     content_panels = Page.content_panels + [
     InlinePanel('team_members', label="Team Members"),
+    ]
+
+
+# Model for Services Page ~ Zakładka Usługi
+class ServicesPage(Page):
+    services_body = StreamField([
+        ('heading', blocks.CharBlock(
+            classname='full title',
+            label='Główny nagłówek')),
+        ('subheading', blocks.CharBlock(
+            classname='sub title',
+            label='Podnagłówek - mniejsze pogrubienie, mniejsza czcionka'
+            )),
+        ('paragraph_style_1', blocks.RichTextBlock(
+            label='Czcionka: 20px, wyśrodkowany, kolor brąz')),
+        ('paragraph_style_2', blocks.RichTextBlock(
+            label='Czcionka: 24px, lekko pogrubiony,\
+            wyśrodkowany, kolor szary')),
+        ('paragraph_style_3', blocks.RichTextBlock(
+            label='Czcionka: 24px, kolor brąz')),
+        ('paragraph', blocks.RichTextBlock(
+            label='Defaultowe style')),
+        ('image', ImageChooserBlock(
+            label='Duże zdjęcie - w zalezności od początkowych jego rozmiarów')),
+        ('image_small', ImageChooserBlock(
+            label='Mniejsze zdjęcie w zalezności od początkowych jego rozmiarów')),
+        ('alert', blocks.CharBlock(classname='alert')),
+    ], use_json_field=True)
+
+    content_panels = Page.content_panels + [
+        FieldPanel('services_body')
     ]
